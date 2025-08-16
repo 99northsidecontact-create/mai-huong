@@ -1,0 +1,242 @@
+/* ====== GLOBAL ====== */
+body {
+  background: url(./images/background.jpg) center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+  perspective: 1000px;
+}
+
+#info {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+/* ====== GIFT BOX ====== */
+.gift {
+  width: 460px;
+  animation: bounce 2s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.gift:hover {
+  animation: shake 0.5s infinite;
+}
+
+.gift.open {
+  animation: none;
+  transform: rotateX(100deg);
+  opacity: 0;
+}
+
+/* ====== LETTER ====== */
+.clickable-letter {
+  width: 160px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  left: 20%;
+  margin: 0;
+  border: 3px solid #ff6f91;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 111, 145, 0.7);
+  animation: floatLetter 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.clickable-letter:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 111, 145, 1);
+}
+
+/* ====== CAKE ====== */
+.cake {
+  width: 420px;
+  position: absolute;
+  bottom: 50px;
+  left: 35%;
+  animation: floatLetter 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.cake:hover {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(255, 111, 145, 1);
+}
+
+/* ====== EXTRA GIFT ====== */
+.gifts {
+  width: 160px;
+  position: absolute;
+  bottom: 50px;
+  left: 68.9%;
+  animation: floatLetter 3s ease-in-out infinite;
+  border: 3px solid #ff6f91;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 111, 145, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gifts:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 111, 145, 1);
+}
+
+/* ====== POPUP ====== */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: url("images/mh12.jpg") center/cover no-repeat;
+  padding: 40px;
+  width: 80vw;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+  color: white;
+  line-height: 1.6;
+}
+
+.popup-overlay-qr{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  width: 300px;
+  max-width: 90vw;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  z-index: 999;
+  display: none;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ====== CLOUDS ====== */
+.floating-cloud-1, .floating-cloud-2, .floating-cloud-3 {
+  position: absolute;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+.floating-cloud-1 {
+  top: 5%;
+  left: -250px;
+  width: 20vw;
+  animation: floatCloud1 25s linear infinite;
+}
+
+.floating-cloud-2 {
+  top: 20%;
+  right: -300px;
+  width: 30vw;
+  animation: floatCloud2 35s linear infinite;
+}
+
+.floating-cloud-3 {
+  top: 60%;
+  left: -400px;
+  width: 25vw;
+  animation: floatCloud3 45s linear infinite;
+}
+
+/* ====== FLOATING PHOTOS ====== */
+[class^="floating-mh-"] {
+  position: absolute;
+  z-index: -2;
+  left: -200px;
+  width: 12vw;
+  animation: floatmh 37.5s linear infinite;
+}
+
+/* Delay & positioning cho từng ảnh */
+.floating-mh-1  { animation-delay: 0s;    top: 20%; }
+.floating-mh-2  { animation-delay: 2.5s;  top: 55%; }
+.floating-mh-3  { animation-delay: 5s;    top: 25%; }
+.floating-mh-4  { animation-delay: 7.5s;  top: 60%; }
+.floating-mh-5  { animation-delay: 10s;   top: 40%; }
+.floating-mh-6  { animation-delay: 12.5s; top: 10%; }
+.floating-mh-7  { animation-delay: 15s;   top: 50%; }
+.floating-mh-8  { animation-delay: 17.5s; top: 18%; }
+.floating-mh-9  { animation-delay: 20s;   top: 49%; }
+.floating-mh-10 { animation-delay: 22.5s; top: 19%; }
+.floating-mh-11 { animation-delay: 25s;   top: 56%; }
+.floating-mh-13 { animation-delay: 27.5s; top: 17%; }
+.floating-mh-14 { animation-delay: 30s;   top: 60%; }
+.floating-mh-15 { animation-delay: 32.5s; top: 16%; }
+
+/* ====== ANIMATIONS ====== */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes floatLetter {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatCloud1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(105vw); }
+}
+
+@keyframes floatCloud2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-105vw); }
+}
+
+@keyframes floatCloud3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(105vw); }
+}
+
+@keyframes floatmh {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(110vw); }
+}

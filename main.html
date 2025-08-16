@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quà Tặng Bí Ẩn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Mây bay -->
+  <img src="./images/cloud.png" alt="Cloud 1" class="floating-cloud-1">
+  <img src="./images/cloud.png" alt="Cloud 2" class="floating-cloud-2">
+  <img src="./images/cloud.png" alt="Cloud 3" class="floating-cloud-3">
+
+  <!-- Ảnh nền bay -->
+  <img src="./images/mh1.jpg" alt="mh 1" class="floating-mh-1">
+  <img src="./images/mh2.jpg" alt="mh 2" class="floating-mh-2">
+  <img src="./images/mh3.jpg" alt="mh 3" class="floating-mh-3">
+  <img src="./images/mh4.jpg" alt="mh 4" class="floating-mh-4">
+  <img src="./images/mh5.jpg" alt="mh 5" class="floating-mh-5">
+  <img src="./images/mh6.jpg" alt="mh 6" class="floating-mh-6">
+  <img src="./images/mh7.jpg" alt="mh 7" class="floating-mh-7">
+  <img src="./images/mh8.jpg" alt="mh 8" class="floating-mh-8">
+  <img src="./images/mh9.jpg" alt="mh 9" class="floating-mh-9">
+  <img src="./images/mh10.jpg" alt="mh 10" class="floating-mh-10">
+  <img src="./images/mh11.jpg" alt="mh 11" class="floating-mh-11">
+  <img src="./images/mh13.jpg" alt="mh 13" class="floating-mh-13">
+  <img src="./images/mh14.jpg" alt="mh 14" class="floating-mh-14">
+  <img src="./images/mh15.jpg" alt="mh 15" class="floating-mh-15">
+
+  <!-- Khu vực chính -->
+  <div class="container">
+    <p id="info"></p>
+    <!-- Hộp quà mở đầu -->
+    <img src="images/gift.png" alt="Gift Box" class="gift" id="giftBox">
+  </div>
+
+  <!-- Ba vật thể sau khi mở quà -->
+  <div>
+    <!-- Lá thư -->
+    <img src="./images/lathu.png" alt="Lá thư" id="letterIcon" class="clickable-letter" style="display: none;">
+    <!-- Bánh sinh nhật -->
+    <img src="./images/cake.png" alt="Bánh" id="letterCake" class="cake" style="display: none;">
+    <!-- Quà nhỏ (QR) -->
+    <img src="./images/gift.png" alt="Quà nhỏ" id="letterGift" class="gifts" style="display: none;">
+  </div>
+
+  <!-- Popup Lá thư -->
+  <div id="popupOverlay" class="popup-overlay" style="display: none;">
+    <div class="popup-box">
+      <span id="closePopup" class="close-btn">&times;</span>
+      <h2>Chúc Mừng Sinh Nhật Mai Hương</h2>
+      <p>
+        Này cậu à...  
+        Cậu có biết không, cậu giống như mặt trời nơi cuối đông — thứ ánh sáng mà tớ ngỡ rằng sẽ chẳng bao giờ tìm thấy.  
+        Nhiều lần tớ muốn bắt chuyện với cậu, muốn nói một lời thật nhẹ… nhưng rồi lại thôi.  
+        Vì tớ sợ… sợ rằng mình của hiện tại chưa đủ tốt để đứng bên cậu, sợ chạm vào lại vô tình làm tan vỡ giấc mơ đẹp nhất của đời mình.<br><br>
+
+        Cậu biết không, người ta bảo: <em>"Có những người như ánh sao, ta chỉ có thể ngắm nhìn, chứ chẳng thể chạm vào…"</em>  
+        Nhưng với tớ, chỉ cần cậu tồn tại thôi, là cả bầu trời đã bừng sáng.  
+
+        Cảm ơn cậu vì đã xinh đẹp như thế.  
+        Cảm ơn cậu vì đã trở thành ngọn đuốc soi đường cho tớ trong những ngày tớ tưởng như chìm mãi trong bóng tối.  
+        Và cảm ơn cậu… vì đã khiến trái tim này biết rung động thêm một lần nữa.<br><br>
+
+        Từ ngày biết cậu, tớ đã lặng lẽ lưu lại 66 tấm ảnh của cậu vào máy…  
+        Tớ xin lỗi vì sự tự tiện ấy, nhưng thật lòng, đó là album đẹp nhất mà tớ từng có.  
+        Và xin lỗi vì cứ để cậu gọi tớ là anh trong khi 2 đứa mình bằng tuổi :))  
+        Món quà nhỏ này chính tay tớ đã làm, tớ nghĩ đây là món quà đầu tiên của tớ mà cậu có thể đón nhận một cách nhẹ nhàng nhất.<br><br>
+
+        Và cuối cùng… Chúc mừng sinh nhật cậu 🌸  
+        Tớ không dám hứa những điều quá lớn lao, chỉ mong từ hôm nay và cả mai sau, tớ vẫn có thể ở đây, dõi theo cậu đi qua những ngày đẹp nhất.  
+        Nếu một ngày nào đó, cậu quay lại và mỉm cười với tớ… thì tớ sẽ coi đó là món quà lớn nhất mà đời này tớ nhận được.
+      </p>
+    </div>
+  </div>
+
+  <!-- Popup QR -->
+  <div id="popupQrImage" class="popup-overlay-qr" style="display: none;">
+    <div class="popup-box-qr">
+      <span id="closePopupQr" class="close-btn">&times;</span>
+      <h3>1 lì xì nhỏ<br>Dùng Ngân Hàng Quét Nhé ♥</h3>
+      <img src="./images/qr.jpg" alt="QR Code" style="max-width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+
+  <!-- Script điều khiển -->
+  <script>
+    const giftBox = document.getElementById("giftBox");
+    const letterIcon = document.getElementById("letterIcon");
+    const letterCake = document.getElementById("letterCake");
+    const letterGift = document.getElementById("letterGift");
+
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupQrImage = document.getElementById("popupQrImage");
+
+    const closePopup = document.getElementById("closePopup");
+    const closePopupQr = document.getElementById("closePopupQr");
+
+    // Mở hộp quà → hiện 3 vật thể
+    giftBox.addEventListener("click", () => {
+      giftBox.style.display = "none";
+      letterIcon.style.display = "block";
+      letterCake.style.display = "block";
+      letterGift.style.display = "block";
+    });
+
+    // Mở popup lá thư
+    letterIcon.addEventListener("click", () => {
+      popupOverlay.style.display = "flex";
+    });
+
+    // Mở popup QR
+    letterGift.addEventListener("click", () => {
+      popupQrImage.style.display = "flex";
+    });
+
+    // Đóng popup lá thư
+    closePopup.addEventListener("click", () => {
+      popupOverlay.style.display = "none";
+    });
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) popupOverlay.style.display = "none";
+    });
+
+    // Đóng popup QR
+    closePopupQr.addEventListener("click", () => {
+      popupQrImage.style.display = "none";
+    });
+    popupQrImage.addEventListener("click", (e) => {
+      if (e.target === popupQrImage) popupQrImage.style.display = "none";
+    });
+  </script>
+
+  <!-- Nhạc nền -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="audio/nangtho.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    const music = document.getElementById("bg-music");
+    setTimeout(() => { music.muted = false; }, 500);
+  </script>
+</body>
+</html>

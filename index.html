@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng Sinh Nhật</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe0ec, #ffe9f9);
+      font-family: 'Quicksand', sans-serif;
+      color: #d63384;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 0 20px;
+    }
+
+    form {
+      position: relative;
+      background: #fff;
+      padding: 35px 45px;
+      border-radius: 20px;
+      border: 1.5px solid #f8bbd0;
+      box-shadow: 0 12px 30px rgba(240, 128, 160, 0.25);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(240, 128, 160, 0.35);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 16px;
+      color: #c2185b;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      background: #fffafd;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #ec407a;
+      box-shadow: 0 0 5px rgba(236, 64, 122, 0.3);
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      background: #f06292;
+      border: none;
+      border-radius: 15px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ec407a;
+    }
+
+    .cat-icon {
+      position: absolute;
+      top: 52px;
+      left: -180px;
+      width: 260px;
+      height: auto;
+      z-index: 10;
+      animation: floatCat 3s ease-in-out infinite;
+    }
+
+    @keyframes floatCat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff0f3;
+      color: #d8000c;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      font-size: 18px;
+      text-align: center;
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Trang web này chỉ dành cho <strong>Mai Hương</strong><br>cho nên hãy xác minh thân phận trước nhé ♥</h2>
+
+  <form id="authForm">
+    <img src="images/cat.png" alt="Mèo dễ thương" class="cat-icon">
+
+    <label for="dob">Ngày tháng năm sinh của cậu là gì?</label>
+    <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" inputmode="numeric" required>
+
+    <label for="phone">Số điện thoại của cậu nữa</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" required>
+
+    <button type="submit">Enter</button>
+  </form>
+
+  <!-- Hộp thông báo lỗi -->
+  <div id="errorBox" class="message-box">
+    <h4>Sai rồi!!!<br>không phải Mai Hương thì không được vào 😡</h4>
+  </div>
+
+  <script>
+    document.getElementById("authForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const dobInput = document.getElementById("dob").value.trim().replace(/-/g, "/").replace(/\s+/g, "");
+      const phoneInput = document.getElementById("phone").value.trim();
+
+      const correctDate = "21/08/2002";
+
+      if (dobInput === correctDate && phoneInput.length >= 10) {
+        window.location.href = "main.html";
+      } else {
+        const errorBox = document.getElementById("errorBox");
+        errorBox.style.display = "block";
+
+        setTimeout(() => {
+          errorBox.style.display = "none";
+        }, 3000);
+      }
+    });
+  </script>
+
+</body>
+</html>
