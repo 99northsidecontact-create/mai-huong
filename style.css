@@ -240,3 +240,43 @@ body {
   0% { transform: translateX(0); }
   100% { transform: translateX(110vw); }
 }
+
+/* ----------- Mobile tối ưu (màn hình dưới 768px) ----------- */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column; /* sắp xếp lại khi màn nhỏ */
+    height: auto;
+  }
+
+  .clickable-letter {
+    width: 100px;
+    bottom: 20px;
+    left: 10%; /* dịch gần cạnh trái hơn */
+  }
+
+  .cake {
+    width: 200px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gifts {
+    width: 100px;
+    bottom: 20px;
+    left: auto;
+    right: 10%; /* dịch gần cạnh phải */
+  }
+
+  .popup-box {
+    width: 95vw;   /* gần full màn hình */
+    max-width: none;
+    padding: 20px;
+    font-size: 14px; /* chữ nhỏ hơn để không tràn */
+  }
+
+  .popup-qr {
+    width: 250px;
+    padding: 15px;
+  }
+}
