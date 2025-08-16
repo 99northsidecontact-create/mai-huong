@@ -244,39 +244,46 @@ body {
 /* ----------- Mobile tối ưu (màn hình dưới 768px) ----------- */
 @media (max-width: 768px) {
   body {
-    flex-direction: column; /* sắp xếp lại khi màn nhỏ */
+    flex-direction: column;
     height: auto;
   }
 
+  .gift {
+    width: 220px;
+    margin-bottom: 10px;
+  }
+
   .clickable-letter {
-    width: 100px;
-    bottom: 20px;
-    left: 10%; /* dịch gần cạnh trái hơn */
+    width: 80px;
+    bottom: 15px;
+    left: 20%;
   }
 
   .cake {
-    width: 200px;
-    bottom: 20px;
+    width: 160px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .gifts {
-    width: 100px;
-    bottom: 20px;
+    width: 80px;
+    bottom: 15px;
     left: auto;
-    right: 10%; /* dịch gần cạnh phải */
+    right: 15%;
   }
 
   .popup-box {
-    width: 95vw;   /* gần full màn hình */
+    width: 90vw;
     max-width: none;
-    padding: 20px;
-    font-size: 14px; /* chữ nhỏ hơn để không tràn */
+    padding: 15px;
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .popup-qr {
-    width: 250px;
-    padding: 15px;
+    width: 180px;
+    padding: 10px;
   }
 }
+

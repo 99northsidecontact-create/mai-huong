@@ -85,7 +85,7 @@
     .cat-icon {
       position: absolute;
       top: 52px;
-      left: -180px;
+      left: -210px;
       width: 260px;
       height: auto;
       z-index: 10;
@@ -122,10 +122,10 @@
     <img src="images/cat.png" alt="Mèo dễ thương" class="cat-icon">
 
     <label for="dob">Ngày tháng năm sinh của cậu là gì?</label>
-    <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" inputmode="numeric" required>
+    <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
 
     <label for="phone">Số điện thoại của cậu nữa</label>
-    <input type="tel" id="phone" name="phone" pattern="[0-9]{10,11}" required>
+    <input type="tel" id="phone" name="phone" required>
 
     <button type="submit">Enter</button>
   </form>
@@ -139,8 +139,13 @@
     document.getElementById("authForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const dobInput = document.getElementById("dob").value.trim().replace(/-/g, "/").replace(/\s+/g, "");
-      const phoneInput = document.getElementById("phone").value.trim();
+      // Xử lý ngày sinh: chấp nhận / . - hoặc dấu cách
+      const dobInput = document.getElementById("dob").value.trim()
+        .replace(/[-. ]/g, "/"); 
+
+      // Xử lý số điện thoại: chỉ giữ lại số
+      const phoneInput = document.getElementById("phone").value.trim()
+        .replace(/\D/g, "");
 
       const correctDate = "21/08/2002";
 
